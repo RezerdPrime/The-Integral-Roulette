@@ -202,7 +202,7 @@ function changeFormula(status) {
         }
     } else {
 
-        if (indexlst[y].length > 0) {
+        if ((indexlst[y].length > 0) && (beg + adv + mas)) {
             if (status == "solved"){
                 scount += 1;
                 solvedarr.push(x.toString() + "," + y.toString());
