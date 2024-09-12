@@ -234,7 +234,7 @@ function changeFormula(status) {
 
         y = indx[randint(0, indx.length-1)];
         x = indexlst[y][randint(0, indexlst[y].length-1)];
-        const newFormula = s + x.toString() + ") " + intlst[y][x] + "$$";
+        const newFormula = s + (x+1).toString() + ") " + intlst[y][x] + "$$";
 
         const fdiv = document.getElementById('formula');
         fdiv.innerHTML = newFormula;
@@ -263,7 +263,7 @@ function ilopen(){
 
         for (let i = 0; i < intlst[j].length; i++) {
             const newParagraph = document.createElement('p');
-            newParagraph.innerHTML = "$$ " + (i).toString() + ") " + intlst[j][i] + " $$";
+            newParagraph.innerHTML = "$$ " + (i+1).toString() + ") " + intlst[j][i] + " $$";
 
             if (solvedarr.includes(i.toString() + "," + j.toString())) {
                 newParagraph.style.color = '#00910c';
