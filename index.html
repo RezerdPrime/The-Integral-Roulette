@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Integral Roulette</title>
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link href="Bahnschrift.ttf" rel="stylesheet">
+    <link rel="shortcut icon" href="int.png" type="image/x-icon">
+    <script src="back.js"></script>
+</head>
+<body>
+    <div style="height: 50px;"></div>
+    <div id="tit">The Integral Roulette</div>
+    <div style="height: 30px;"></div>
+    
+    <div id="mother">
+        <div id="aside">
+            <p style="font-size: 20px; margin-top: 5px;">Difficulty groups</p>
+            <form>
+                <div class="chk">
+                    <label for="1">Beginner</label>
+                    <input type="checkbox" id="1">
+                </div>
+
+                <div class="chk">
+                    <label for="2">Advanced</label>
+                    <input type="checkbox" id="2">
+                </div>
+
+                <div class="chk">
+                    <label for="3">Master</label>
+                    <input type="checkbox" id="3">
+                </div>
+            </form>
+        </div>
+
+        <div id="formula">$$ \Huge \int^b_a f(x) dx $$</div>
+
+        <div id="bside">
+            <div style="height: 10px;"></div>
+            <button class="IntegralList" id="openPopup" onclick="ilopen()">Integral List</button>
+
+            <div id="run">
+                <div style="height: 10px;"></div>
+                <button onclick="changeFormula('run')" class="Pass" style="width: 65px;">Run</button>
+            </div>
+
+            <div id="afterrun">
+                <div style="height: 10px;"></div>
+                <button onclick="changeFormula('solved')" class="Solved" id="s">Solved</button>
+
+                <div style="height: 10px;"></div>
+                <button onclick="changeFormula('passed')" class="Pass" id="p">Pass</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="height: 20px;"></div>
+    <div id="stat">
+        <div id="statsolved"></div>
+        <div style="width: 75px;"></div>
+        <div id="curint" style="font-size: 20px;"></div>
+        <div style="width: 75px;"></div>
+        <div id="statpassed"></div>
+    </div>
+
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <h1><center>The Integral List</center></h1>
+
+            <p id="intcount"></p>
+            <p>They are grouped into 3 levels of difficulty:</p>
+
+            <div style="margin-left: 20px;">
+                <p>1) <b><em>Beginner</em></b> - Here are integrals that require the ability to apply the most basic methods, such as: </p>
+                <p> - substituting a variable, </p>
+                <p> - integrating by parts, </p>
+                <p> - constructing a recurrence formula;</p>
+            </div>
+
+            <div style="height: 5px;"></div>
+
+            <div style="margin-left: 20px;">
+                <p>2) <b><em>Advanced</em></b> - Integrals of this group require knowledge of a second course in mathematical analysis. </p>
+                <p> Here you will need to: </p>
+                <p> - be able to use differentiation over a parameter, </p>
+                <p> - integrate under the sign of the integral, </p>
+                <p> - know some things about series and a few special functions;</p>
+            </div>
+
+            <div style="height: 5px;"></div>
+
+            <div style="margin-left: 20px;">
+                <p>3) <b><em>Master</em></b> - Here are brutal integrals that require a deeper knowledge of special functions, calculus, </p>
+                <p> and even complex analysis. In addition, very specialized formulas may be required.</p>
+            </div>
+
+            <div style="height: 5px;"></div>
+            <hr>
+            <div style="height: 5px;"></div>
+
+            <div id="IL"></div>
+
+            <button class="Close" onclick="ilclose()">Close</button>
+        </div>
+    </div>
+
+</body>
+</html>
